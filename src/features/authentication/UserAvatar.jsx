@@ -30,8 +30,11 @@ const UserAvatar = () => {
 
   return (
     <StyledUserAvatar>
-      <Avatar src={avatar || defaulUserImage} alt={`Avatar of ${fullName}`} />
-      <span>{fullName}</span>
+      <Avatar
+        src={avatar || defaulUserImage}
+        alt={`Avatar of ${fullName || "new guest"}`}
+      />
+      <span>{fullName || "new guest"}</span>
     </StyledUserAvatar>
   );
 };
