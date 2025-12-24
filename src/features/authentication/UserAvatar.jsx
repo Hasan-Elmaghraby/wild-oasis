@@ -26,7 +26,7 @@ import defaulUserImage from "../../data/img/default-user.jpg";
 
 const UserAvatar = () => {
   const { user } = useUser();
-  const { fullName, avatar } = user.user_metadata;
+  const { fullName, avatar } = user.user_metadata ?? {};
 
   return (
     <StyledUserAvatar>
