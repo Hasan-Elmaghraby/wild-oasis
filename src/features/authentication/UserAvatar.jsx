@@ -26,6 +26,16 @@ import defaulUserImage from "../../data/img/default-user.jpg";
 
 const UserAvatar = () => {
   const { user } = useUser();
+
+  if (!user) {
+    return (
+      <StyledUserAvatar>
+        <Avatar src={defaulUserImage} alt="Guest avatar" />
+        <span>Guest</span>
+      </StyledUserAvatar>
+    );
+  }
+
   const { fullName, avatar } = user.user_metadata ?? {};
 
   return (
@@ -38,5 +48,6 @@ const UserAvatar = () => {
     </StyledUserAvatar>
   );
 };
+
 
 export default UserAvatar;
